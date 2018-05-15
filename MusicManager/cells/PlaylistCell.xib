@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="Gp6-Rj-0vy" customClass="PlaylistCell" customModule="MusicManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gp6-Rj-0vy" id="5em-Ef-xg7">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-mj-BQj">
+                        <rect key="frame" x="2" y="2" width="71" height="71"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="jGj-mj-BQj" secondAttribute="height" id="EM7-hF-UXE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwL-Cg-ix7">
+                        <rect key="frame" x="83" y="2" width="290" height="71"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jGj-mj-BQj" firstAttribute="leading" secondItem="5em-Ef-xg7" secondAttribute="leading" constant="2" id="7mv-Ns-US2"/>
+                    <constraint firstItem="RwL-Cg-ix7" firstAttribute="leading" secondItem="jGj-mj-BQj" secondAttribute="trailing" constant="10" id="Ax4-ry-0Q5"/>
+                    <constraint firstAttribute="trailing" secondItem="RwL-Cg-ix7" secondAttribute="trailing" constant="2" id="MhX-Ie-bfo"/>
+                    <constraint firstItem="jGj-mj-BQj" firstAttribute="top" secondItem="5em-Ef-xg7" secondAttribute="top" constant="2" id="Nba-lN-0gQ"/>
+                    <constraint firstAttribute="bottom" secondItem="jGj-mj-BQj" secondAttribute="bottom" constant="2" id="ZCA-xz-wFW"/>
+                    <constraint firstItem="RwL-Cg-ix7" firstAttribute="top" secondItem="5em-Ef-xg7" secondAttribute="top" constant="2" id="ukj-7f-kgU"/>
+                    <constraint firstAttribute="bottom" secondItem="RwL-Cg-ix7" secondAttribute="bottom" constant="2" id="yoa-h7-2bd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mediaImage" destination="jGj-mj-BQj" id="7cO-12-ICl"/>
+                <outlet property="mediaLabel" destination="RwL-Cg-ix7" id="URd-Zd-uWZ"/>
+            </connections>
+            <point key="canvasLocation" x="92.5" y="-36"/>
+        </tableViewCell>
+    </objects>
+</document>
