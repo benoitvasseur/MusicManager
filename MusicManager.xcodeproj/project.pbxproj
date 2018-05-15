@@ -18,6 +18,8 @@
 		0E4001C620A9A5CB00E05890 /* MediaItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4001C520A9A5CB00E05890 /* MediaItemCell.swift */; };
 		0E4001C820A9AD1500E05890 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4001C720A9AD1500E05890 /* PlaylistViewController.swift */; };
 		0E4001CA20A9AE9500E05890 /* MediaItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E4001C920A9AE9500E05890 /* MediaItemCell.xib */; };
+		0E43F4DC20AAFCAD0033A433 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E43F4DB20AAFCAD0033A433 /* PlayerView.xib */; };
+		0E43F4DE20AAFD6F0033A433 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E43F4DD20AAFD6F0033A433 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0E4001C520A9A5CB00E05890 /* MediaItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemCell.swift; sourceTree = "<group>"; };
 		0E4001C720A9AD1500E05890 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		0E4001C920A9AE9500E05890 /* MediaItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaItemCell.xib; sourceTree = "<group>"; };
+		0E43F4DB20AAFCAD0033A433 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		0E43F4DD20AAFD6F0033A433 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		0E4001AA20A9A0BE00E05890 /* MusicManager */ = {
 			isa = PBXGroup;
 			children = (
+				0E43F4DA20AAFC8F0033A433 /* player */,
 				0E4001C020A9A58000E05890 /* cells */,
 				0E4001BD20A9A1E900E05890 /* AppleMusic */,
 				0E4001AB20A9A0BE00E05890 /* AppDelegate.swift */,
@@ -96,6 +101,15 @@
 				0E4001C920A9AE9500E05890 /* MediaItemCell.xib */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		0E43F4DA20AAFC8F0033A433 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				0E43F4DB20AAFCAD0033A433 /* PlayerView.xib */,
+				0E43F4DD20AAFD6F0033A433 /* PlayerView.swift */,
+			);
+			path = player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4001CA20A9AE9500E05890 /* MediaItemCell.xib in Resources */,
+				0E43F4DC20AAFCAD0033A433 /* PlayerView.xib in Resources */,
 				0E4001B620A9A0C000E05890 /* LaunchScreen.storyboard in Resources */,
 				0E4001B320A9A0C000E05890 /* Assets.xcassets in Resources */,
 				0E4001B120A9A0BE00E05890 /* Main.storyboard in Resources */,
@@ -173,6 +188,7 @@
 			files = (
 				0E4001C620A9A5CB00E05890 /* MediaItemCell.swift in Sources */,
 				0E4001BF20A9A20300E05890 /* MusicImport.swift in Sources */,
+				0E43F4DE20AAFD6F0033A433 /* PlayerView.swift in Sources */,
 				0E4001C820A9AD1500E05890 /* PlaylistViewController.swift in Sources */,
 				0E4001AE20A9A0BE00E05890 /* PlaylistsViewController.swift in Sources */,
 				0E4001AC20A9A0BE00E05890 /* AppDelegate.swift in Sources */,

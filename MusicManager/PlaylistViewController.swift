@@ -12,10 +12,11 @@ import MediaPlayer
 class PlaylistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableview: UITableView!
     var playlist: MPMediaItemCollection!
-    var items: [MPMediaItem]!
-    let playerController = MPMusicPlayerController.systemMusicPlayer
+    fileprivate var items: [MPMediaItem]!
     
-    let cellIdentifier = "CellId"
+    fileprivate var playerView: PlayerView!
+    
+    fileprivate let cellIdentifier = "CellId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,13 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             return mediaItem1.dateAdded.compare(mediaItem2.dateAdded) == .orderedDescending
         })
         
+        if let playerView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as? PlayerView {
+            playerView.frame = CGRect(x: 0, y: self.view.bounds.size.height - 80, width: self.view.bounds.width, height: 80)
+            playerView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+            self.view.addSubview(playerView)
+            
+            self.playerView = playerView
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +50,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             let item = items[indexPath.row]
             cell.configureWithMediaItem(mediaItem: item)
             
-            if let isEqual = playerController.nowPlayingItem?.isEqual(item), isEqual {
+            if let isEqual = playerView.nowPlayingItem()?.isEqual(item), isEqual {
                 cell.setSelected(true, animated: true)
             } else {
                 cell.setSelected(false, animated: true)
@@ -60,15 +68,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.row]
         
-        playerController.setQueue(with: MPMediaItemCollection(items: [item]))
-        playerController.append(MPMusicPlayerMediaItemQueueDescriptor(itemCollection: MPMediaItemCollection(items: items)
-        
-        if !self.playerController.isPreparedToPlay {
-            self.playerController.prepareToPlay()
-        }
-        playerController.play()
-        
-        tableView.reloadRows(at: [indexPath], with: .none)
+        playerView.playItemFromList(item: item, list: items)
     }
 
 }

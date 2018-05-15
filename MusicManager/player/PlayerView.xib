@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="It6-4B-ZLO" customClass="PlayerView" customModule="MusicManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YKf-a8-ea8">
+                    <rect key="frame" x="4" y="4" width="73" height="73"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YKf-a8-ea8" secondAttribute="height" id="rBa-5i-KMk"/>
+                    </constraints>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-f9-wT4">
+                    <rect key="frame" x="77" y="18" width="150" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="KIg-gf-t41"/>
+                        <constraint firstAttribute="width" constant="150" id="Lrv-WW-ZfQ"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem systemItem="rewind" id="GaX-xl-CU7">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="previousTouched:" destination="It6-4B-ZLO" id="gXG-pH-EIB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="flexibleSpace" id="ntz-2L-Tza">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="previousTouched:" destination="It6-4B-ZLO" id="GYe-it-Br0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="pause" id="TJH-ee-7zV">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="pauseTouched:" destination="It6-4B-ZLO" id="fmo-W1-a5O"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="flexibleSpace" id="sNR-n7-Vyq">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="previousTouched:" destination="It6-4B-ZLO" id="h4L-mM-J92"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="fastForward" id="qz1-nB-HFe">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="nextTouched:" destination="It6-4B-ZLO" id="zlJ-t5-K5O"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </toolbar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-7f-Wze">
+                    <rect key="frame" x="227" y="4" width="143" height="73"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="rbt-pP-NaE" firstAttribute="bottom" secondItem="YKf-a8-ea8" secondAttribute="bottom" constant="4" id="A4K-ce-KJC"/>
+                <constraint firstItem="f9g-f9-wT4" firstAttribute="centerY" secondItem="It6-4B-ZLO" secondAttribute="centerY" id="DOe-wI-gvS"/>
+                <constraint firstItem="rbt-pP-NaE" firstAttribute="bottom" secondItem="bQp-7f-Wze" secondAttribute="bottom" constant="4" id="Tg8-Ah-2Ml"/>
+                <constraint firstItem="f9g-f9-wT4" firstAttribute="leading" secondItem="YKf-a8-ea8" secondAttribute="trailing" id="WJ1-IL-j7k"/>
+                <constraint firstItem="bQp-7f-Wze" firstAttribute="leading" secondItem="f9g-f9-wT4" secondAttribute="trailing" id="bdZ-1j-Rxj"/>
+                <constraint firstItem="YKf-a8-ea8" firstAttribute="top" secondItem="rbt-pP-NaE" secondAttribute="top" constant="4" id="fxt-NS-rAy"/>
+                <constraint firstItem="bQp-7f-Wze" firstAttribute="top" secondItem="rbt-pP-NaE" secondAttribute="top" constant="4" id="iBB-V4-Fsh"/>
+                <constraint firstItem="rbt-pP-NaE" firstAttribute="trailing" secondItem="bQp-7f-Wze" secondAttribute="trailing" constant="5" id="yJG-F3-xlv"/>
+                <constraint firstItem="YKf-a8-ea8" firstAttribute="leading" secondItem="rbt-pP-NaE" secondAttribute="leading" constant="4" id="yk6-Jo-CVK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="rbt-pP-NaE"/>
+            <connections>
+                <outlet property="imageView" destination="YKf-a8-ea8" id="fn9-ct-901"/>
+                <outlet property="pauseButton" destination="TJH-ee-7zV" id="Xod-uL-QNj"/>
+                <outlet property="playerLabel" destination="bQp-7f-Wze" id="hor-CH-nuW"/>
+                <outlet property="toolbar" destination="f9g-f9-wT4" id="Ilg-70-uq7"/>
+            </connections>
+            <point key="canvasLocation" x="91.5" y="-432.5"/>
+        </view>
+    </objects>
+</document>
