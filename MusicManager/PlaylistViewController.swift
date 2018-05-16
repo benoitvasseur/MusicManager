@@ -28,9 +28,17 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         })
         
         if let playerView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as? PlayerView {
-            playerView.frame = CGRect(x: 0, y: self.view.bounds.size.height - 80, width: self.view.bounds.width, height: 80)
-            playerView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+            playerView.translatesAutoresizingMaskIntoConstraints = false
+            
             self.view.addSubview(playerView)
+            
+            let margins = self.view.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([
+                playerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+                playerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+                playerView.heightAnchor.constraint(equalToConstant: 80),
+                playerView.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
+            ])
             
             self.playerView = playerView
         }
@@ -50,11 +58,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             let item = items[indexPath.row]
             cell.configureWithMediaItem(mediaItem: item)
             
-            if let isEqual = playerView.nowPlayingItem()?.isEqual(item), isEqual {
-                cell.setSelected(true, animated: true)
-            } else {
-                cell.setSelected(false, animated: true)
-            }
             return cell
         }
         
@@ -69,6 +72,10 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         let item = items[indexPath.row]
         
         playerView.playItemFromList(item: item, list: items)
+    }
+    
+    func updatePlayer() {
+        
     }
 
 }

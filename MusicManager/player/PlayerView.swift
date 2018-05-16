@@ -10,16 +10,31 @@ import UIKit
 import MediaPlayer
 
 class PlayerView: UIView {
-    let playerController = MPMusicPlayerController.systemMusicPlayer
+    @objc let playerController = MPMusicPlayerController.systemMusicPlayer
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var playerLabel: UILabel!
     @IBOutlet weak var pauseButton: UIBarButtonItem!
     @IBOutlet weak var toolbar: UIToolbar!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.5, height: 0.5);
+        self.layer.shadowOpacity = 0.5;
+        
+        updatePlayer(item: playerController.nowPlayingItem)
+        NotificationCenter.default.addObserver(self, selector: #selector(nowPlayingItemDidChangeNotification), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func playItemFromList(item: MPMediaItem, list: [MPMediaItem]) {
-        playerController.setQueue(with: MPMediaItemCollection(items: [item]))
-        playerController.append(MPMusicPlayerMediaItemQueueDescriptor(itemCollection: MPMediaItemCollection(items: list)))
+        playerController.pause()
+        playerController.setQueue(with: MPMediaItemCollection(items: list))
+        playerController.nowPlayingItem = item
         
         if !self.playerController.isPreparedToPlay {
             self.playerController.prepareToPlay()
@@ -62,5 +77,14 @@ class PlayerView: UIView {
         }
     }
     
+    // MARK: - Update player
+    @objc func nowPlayingItemDidChangeNotification() {
+        updatePlayer(item: playerController.nowPlayingItem)
+    }
+    
+    func updatePlayer(item: MPMediaItem?) {
+        playerLabel.text = item?.title
+        imageView.image = item?.artwork?.image(at: imageView.bounds.size)
+    }
     
 }

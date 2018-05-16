@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,9 +48,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-Er-h2j">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-Er-h2j">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="lTQ-md-OFE" id="HvY-gG-UxC"/>
@@ -60,6 +58,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZKT-Er-h2j" firstAttribute="trailing" secondItem="FMV-uZ-BPx" secondAttribute="trailing" id="CP2-2G-n1z"/>
+                            <constraint firstItem="ZKT-Er-h2j" firstAttribute="bottom" secondItem="FMV-uZ-BPx" secondAttribute="bottom" id="dMq-DA-6wM"/>
+                            <constraint firstItem="ZKT-Er-h2j" firstAttribute="top" secondItem="FMV-uZ-BPx" secondAttribute="top" id="rWQ-NI-MBZ"/>
+                            <constraint firstItem="ZKT-Er-h2j" firstAttribute="leading" secondItem="FMV-uZ-BPx" secondAttribute="leading" id="yIG-cA-fbj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FMV-uZ-BPx"/>
                     </view>
                     <connections>
