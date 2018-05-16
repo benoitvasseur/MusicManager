@@ -13,21 +13,6 @@ class MediaItemCell: UITableViewCell {
     @IBOutlet weak var mediaLabel: UILabel!
     @IBOutlet weak var mediaImage: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        if selected {
-            backgroundColor = UIColor.lightGray
-        } else {
-            backgroundColor = UIColor.white
-        }
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         mediaLabel.text = ""

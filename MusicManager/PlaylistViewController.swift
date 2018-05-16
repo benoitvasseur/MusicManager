@@ -27,6 +27,8 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             return mediaItem1.dateAdded.compare(mediaItem2.dateAdded) == .orderedDescending
         })
         
+        NotificationCenter.default.addObserver(self, selector: #selector(nowPlayingItemDidChangeNotification), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
+        
         if let playerView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as? PlayerView {
             playerView.translatesAutoresizingMaskIntoConstraints = false
             
@@ -43,12 +45,12 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             self.playerView = playerView
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: - Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playlist.count
     }
@@ -74,8 +76,15 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         playerView.playItemFromList(item: item, list: items)
     }
     
-    func updatePlayer() {
-        
+    // MARK: - Player
+    
+    @objc func nowPlayingItemDidChangeNotification() {
+        if let selectedIndex = tableview.indexPathForSelectedRow {
+            tableview.deselectRow(at: selectedIndex, animated: true)
+        }
+        if let nowPlayingItem = playerView.nowPlayingItem(), let index = items.index(of: nowPlayingItem) {
+            tableview.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .none)
+        }
     }
 
 }
