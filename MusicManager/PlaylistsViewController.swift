@@ -36,6 +36,15 @@ class PlaylistsViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func fetchPlaylists() {
         playlists = MusicImport.getPlaylists()
+        if let playlists = playlists {
+            for playlist in playlists {
+                if playlist.count == 0 {
+                    if let index = self.playlists!.index(of: playlist) {
+                        self.playlists!.remove(at: index)
+                    }
+                }
+            }
+        }
         DispatchQueue.main.async {
             self.tableview.reloadData()
         }
