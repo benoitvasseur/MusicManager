@@ -9,12 +9,10 @@
 import UIKit
 import MediaPlayer
 
-class PlaylistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlaylistViewController: PlayerViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableview: UITableView!
     var playlist: MPMediaItemCollection!
     fileprivate var items: [MPMediaItem]!
-    
-    fileprivate var playerView: PlayerView!
     
     fileprivate let cellIdentifier = "CellId"
     
@@ -29,21 +27,6 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         
         NotificationCenter.default.addObserver(self, selector: #selector(nowPlayingItemDidChangeNotification), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         
-        if let playerView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as? PlayerView {
-            playerView.translatesAutoresizingMaskIntoConstraints = false
-            
-            self.view.addSubview(playerView)
-            
-            let margins = self.view.safeAreaLayoutGuide
-            NSLayoutConstraint.activate([
-                playerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
-                playerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
-                playerView.heightAnchor.constraint(equalToConstant: 80),
-                playerView.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
-            ])
-            
-            self.playerView = playerView
-        }
     }
     
     deinit {
@@ -73,7 +56,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.row]
         
-        playerView.playItemFromList(item: item, list: items)
+        AppDelegate.appDelegate().playerView.playItemFromList(item: item, list: items)
     }
     
     // MARK: - Player
@@ -82,7 +65,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         if let selectedIndex = tableview.indexPathForSelectedRow {
             tableview.deselectRow(at: selectedIndex, animated: true)
         }
-        if let nowPlayingItem = playerView.nowPlayingItem(), let index = items.index(of: nowPlayingItem) {
+        if let nowPlayingItem = AppDelegate.appDelegate().playerView.nowPlayingItem(), let index = items.index(of: nowPlayingItem) {
             tableview.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .none)
         }
     }

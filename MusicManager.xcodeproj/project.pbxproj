@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0AECFD20AD97820073903C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0AECFC20AD97820073903C /* PlayerViewController.swift */; };
 		0E4001AC20A9A0BE00E05890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4001AB20A9A0BE00E05890 /* AppDelegate.swift */; };
 		0E4001AE20A9A0BE00E05890 /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4001AD20A9A0BE00E05890 /* PlaylistsViewController.swift */; };
 		0E4001B120A9A0BE00E05890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4001AF20A9A0BE00E05890 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0AECFC20AD97820073903C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = MusicManager/player/PlayerViewController.swift; sourceTree = SOURCE_ROOT; };
 		0E4001A820A9A0BE00E05890 /* MusicManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4001AB20A9A0BE00E05890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E4001AD20A9A0BE00E05890 /* PlaylistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4001BE20A9A20300E05890 /* MusicImport.swift */,
+				0A0AECFC20AD97820073903C /* PlayerViewController.swift */,
 			);
 			path = AppleMusic;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4001C620A9A5CB00E05890 /* MediaItemCell.swift in Sources */,
+				0A0AECFD20AD97820073903C /* PlayerViewController.swift in Sources */,
 				0E4001BF20A9A20300E05890 /* MusicImport.swift in Sources */,
 				0E43F4DE20AAFD6F0033A433 /* PlayerView.swift in Sources */,
 				0E4001C820A9AD1500E05890 /* PlaylistViewController.swift in Sources */,

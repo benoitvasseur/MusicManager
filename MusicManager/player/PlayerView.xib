@@ -22,8 +22,14 @@
                         <constraint firstAttribute="width" secondItem="YKf-a8-ea8" secondAttribute="height" id="rBa-5i-KMk"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-7f-Wze">
+                    <rect key="frame" x="82" y="4" width="148" height="73"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-f9-wT4">
-                    <rect key="frame" x="77" y="0.0" width="130" height="81"/>
+                    <rect key="frame" x="235" y="0.0" width="130" height="81"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="130" id="Lrv-WW-ZfQ"/>
                     </constraints>
@@ -61,23 +67,17 @@
                     </items>
                     <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </toolbar>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bQp-7f-Wze">
-                    <rect key="frame" x="207" y="4" width="163" height="73"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="rbt-pP-NaE" firstAttribute="bottom" secondItem="YKf-a8-ea8" secondAttribute="bottom" constant="4" id="A4K-ce-KJC"/>
                 <constraint firstItem="f9g-f9-wT4" firstAttribute="top" secondItem="rbt-pP-NaE" secondAttribute="top" id="Rbj-7Z-SMk"/>
                 <constraint firstItem="rbt-pP-NaE" firstAttribute="bottom" secondItem="bQp-7f-Wze" secondAttribute="bottom" constant="4" id="Tg8-Ah-2Ml"/>
-                <constraint firstItem="f9g-f9-wT4" firstAttribute="leading" secondItem="YKf-a8-ea8" secondAttribute="trailing" id="WJ1-IL-j7k"/>
-                <constraint firstItem="bQp-7f-Wze" firstAttribute="leading" secondItem="f9g-f9-wT4" secondAttribute="trailing" id="bdZ-1j-Rxj"/>
                 <constraint firstItem="YKf-a8-ea8" firstAttribute="top" secondItem="rbt-pP-NaE" secondAttribute="top" constant="4" id="fxt-NS-rAy"/>
+                <constraint firstItem="rbt-pP-NaE" firstAttribute="trailing" secondItem="f9g-f9-wT4" secondAttribute="trailing" constant="10" id="gNO-B6-QEK"/>
                 <constraint firstItem="bQp-7f-Wze" firstAttribute="top" secondItem="rbt-pP-NaE" secondAttribute="top" constant="4" id="iBB-V4-Fsh"/>
-                <constraint firstItem="rbt-pP-NaE" firstAttribute="trailing" secondItem="bQp-7f-Wze" secondAttribute="trailing" constant="5" id="yJG-F3-xlv"/>
+                <constraint firstItem="f9g-f9-wT4" firstAttribute="leading" secondItem="bQp-7f-Wze" secondAttribute="trailing" constant="5" id="uvF-SI-kc0"/>
+                <constraint firstItem="bQp-7f-Wze" firstAttribute="leading" secondItem="YKf-a8-ea8" secondAttribute="trailing" constant="5" id="yH6-sf-cME"/>
                 <constraint firstItem="YKf-a8-ea8" firstAttribute="leading" secondItem="rbt-pP-NaE" secondAttribute="leading" constant="4" id="yk6-Jo-CVK"/>
                 <constraint firstItem="rbt-pP-NaE" firstAttribute="bottom" secondItem="f9g-f9-wT4" secondAttribute="bottom" id="zud-gz-K8t"/>
             </constraints>

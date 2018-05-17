@@ -9,7 +9,7 @@
 import UIKit
 import MediaPlayer
 
-class PlaylistsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlaylistsViewController: PlayerViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableview: UITableView!
     var playlists: [MPMediaItemCollection]? = nil
