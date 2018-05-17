@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A0AECFD20AD97820073903C /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0AECFC20AD97820073903C /* PlayerViewController.swift */; };
+		0A0AECFF20AD9EDB0073903C /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0AECFE20AD9EDB0073903C /* QueueViewController.swift */; };
 		0E4001AC20A9A0BE00E05890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4001AB20A9A0BE00E05890 /* AppDelegate.swift */; };
 		0E4001AE20A9A0BE00E05890 /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4001AD20A9A0BE00E05890 /* PlaylistsViewController.swift */; };
 		0E4001B120A9A0BE00E05890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4001AF20A9A0BE00E05890 /* Main.storyboard */; };
@@ -24,7 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A0AECFC20AD97820073903C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = MusicManager/player/PlayerViewController.swift; sourceTree = SOURCE_ROOT; };
+		0A0AECFC20AD97820073903C /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = MusicManager/PlayerViewController.swift; sourceTree = SOURCE_ROOT; };
+		0A0AECFE20AD9EDB0073903C /* QueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
 		0E4001A820A9A0BE00E05890 /* MusicManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4001AB20A9A0BE00E05890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E4001AD20A9A0BE00E05890 /* PlaylistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,8 @@
 				0E4001C020A9A58000E05890 /* cells */,
 				0E4001BD20A9A1E900E05890 /* AppleMusic */,
 				0E4001AB20A9A0BE00E05890 /* AppDelegate.swift */,
+				0A0AECFC20AD97820073903C /* PlayerViewController.swift */,
+				0A0AECFE20AD9EDB0073903C /* QueueViewController.swift */,
 				0E4001AD20A9A0BE00E05890 /* PlaylistsViewController.swift */,
 				0E4001C720A9AD1500E05890 /* PlaylistViewController.swift */,
 				0E4001AF20A9A0BE00E05890 /* Main.storyboard */,
@@ -90,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				0E4001BE20A9A20300E05890 /* MusicImport.swift */,
-				0A0AECFC20AD97820073903C /* PlayerViewController.swift */,
 			);
 			path = AppleMusic;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				0E4001AE20A9A0BE00E05890 /* PlaylistsViewController.swift in Sources */,
 				0E4001AC20A9A0BE00E05890 /* AppDelegate.swift in Sources */,
 				0E4001C220A9A59700E05890 /* PlaylistCell.swift in Sources */,
+				0A0AECFF20AD9EDB0073903C /* QueueViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

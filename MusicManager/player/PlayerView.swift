@@ -10,12 +10,13 @@ import UIKit
 import MediaPlayer
 
 class PlayerView: UIView {
-    @objc let playerController = MPMusicPlayerController.systemMusicPlayer
+    let playerController = MPMusicPlayerController.systemMusicPlayer
 
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var playerLabel: UILabel!
-    @IBOutlet weak var pauseButton: UIBarButtonItem!
-    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet fileprivate  weak var imageView: UIImageView!
+    @IBOutlet fileprivate weak var playerLabel: UILabel!
+    @IBOutlet fileprivate weak var pauseButton: UIBarButtonItem!
+    @IBOutlet fileprivate weak var toolbar: UIToolbar!
+    @IBOutlet fileprivate weak var touchButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -87,4 +88,8 @@ class PlayerView: UIView {
         imageView.image = item?.artwork?.image(at: imageView.bounds.size)
     }
     
+    // MARK: - Action
+    func addTouchTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents) {
+        touchButton.addTarget(target, action: action, for: controlEvents)
+    }
 }

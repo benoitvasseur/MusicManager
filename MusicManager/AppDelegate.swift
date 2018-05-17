@@ -19,23 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let playerView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as? PlayerView {
-            playerView.translatesAutoresizingMaskIntoConstraints = false
-            
-            if let window = self.window {
-                window.addSubview(playerView)
-                
-                let margins = window.safeAreaLayoutGuide
-                NSLayoutConstraint.activate([
-                    playerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
-                    playerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
-                    playerView.heightAnchor.constraint(equalToConstant: 80),
-                    playerView.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
-                    ])
-                
-                self.playerView = playerView
-            }
-        }
+        addPlayer()
         
         return true
     }
@@ -67,6 +51,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: - Player
+    
+    @objc func playerTouched() {
+        let queueVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "queue")
+        self.window?.rootViewController?.present(queueVC, animated: true, completion: nil)
+    }
+    
+    func addPlayer() {
+        if let window = self.window, let playerView = Bundle.main.loadNibNamed("PlayerView", owner: self, options: nil)?.first as? PlayerView {
+            playerView.addTouchTarget(self, action: #selector(playerTouched), for: .touchUpInside)
+            
+            playerView.translatesAutoresizingMaskIntoConstraints = false
+            
+            window.addSubview(playerView)
+            
+            let margins = window.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([
+                playerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+                playerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor),
+                playerView.heightAnchor.constraint(equalToConstant: 80),
+                playerView.bottomAnchor.constraint(equalTo: margins.bottomAnchor)
+                ])
+            
+            self.playerView = playerView
+            
+        }
+    }
 
 }
 
