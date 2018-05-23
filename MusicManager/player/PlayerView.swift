@@ -17,6 +17,7 @@ class PlayerView: UIView {
     @IBOutlet fileprivate weak var pauseButton: UIBarButtonItem!
     @IBOutlet fileprivate weak var toolbar: UIToolbar!
     @IBOutlet fileprivate weak var touchButton: UIButton!
+    private(set) var queueList: [MPMediaItem]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,9 +33,19 @@ class PlayerView: UIView {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func playItemFromList(item: MPMediaItem, list: [MPMediaItem]) {
+    func playItemFromCurrentList(item: MPMediaItem) {
+        if let index = self.queueList?.index(of: item), let range = Range(NSRange(location: 0, length: index)) {
+            self.queueList?.removeSubrange(range)
+        }
+        playItemFromList(item: item, list: self.queueList)
+    }
+    
+    func playItemFromList(item: MPMediaItem, list: [MPMediaItem]?) {
         playerController.pause()
-        playerController.setQueue(with: MPMediaItemCollection(items: list))
+        if let list = list {
+            playerController.setQueue(with: MPMediaItemCollection(items: list))
+        }
+        self.queueList = list
         playerController.nowPlayingItem = item
         
         if !self.playerController.isPreparedToPlay {
