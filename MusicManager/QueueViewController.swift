@@ -1,11 +1,3 @@
-//
-//  QueueViewController.swift
-//  MusicManager
-//
-//  Created by Benoit Vasseur on 17/05/2018.
-//  Copyright © 2018 bvasseur. All rights reserved.
-//
-
 import UIKit
 import MediaPlayer
 
@@ -60,6 +52,9 @@ class QueueViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableview.register(UINib(nibName: "MediaItemCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
         AppDelegate.appDelegate().window?.sendSubview(toBack: AppDelegate.appDelegate().playerView)
+        
+        updatePlayer()
+        updateQueue()
         
         tableview.reloadData()
     }
@@ -116,4 +111,11 @@ class QueueViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    func updatePlayer() {
+        AppDelegate.appDelegate().playerView.updatePlayer(item: playerController.nowPlayingItem)
+    }
+    
+    func updateQueue() {
+        tableview.reloadData()
+    }
 }
